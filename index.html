@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./src/css/styles.css" />
+		<title>Click It</title>
+	</head>
+	<body>
+		<div class="div">
+			<button
+				id="button"
+				class="button"
+				onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0')"
+			>
+				Click Me!
+			</button>
+			<h1 class="text">CLICK IT</h1>
+		</div>
+	</body>
+</html>
+
+<script>
+	var element = document.getElementById('button');
+	element.addEventListener('mouseover', function () {
+		element.style.left = Math.random() * 600 + 'px';
+        element.style.top = Math.random() * 600 + 'px';
+        element.style.position = 'absolute';
+	});
+
+	var event = new MouseEvent('mouseover', {
+		view: window,
+		bubbles: true,
+		cancelable: true,
+	});
+
+	element.dispatchEvent(event);
+</script>
